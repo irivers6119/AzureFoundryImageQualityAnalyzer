@@ -106,3 +106,7 @@ async def analyze_image(file: UploadFile = File(...), user=Depends(authenticate_
 
 **Note:**  
 This project uses sample images in the `images` directory for demonstration. For production, ensure you follow Azure and security best practices for deployment
+
+** Token Count: 10311 **
+
+[Pricing Calculator for Azure OpenAI](https://livechatai.com/gpt-4o-pricing-calculator)

@@ -1,0 +1,46 @@
+[
+    {
+        "role": "system",
+        "content": "Return a JSON object with: file_name, file_extension, Lighting_and_Exposure, Angle_and_Composition, Clarity_and_Resolution, Detail_Visibility, Background_and_Distractions, Overall_Score (all decimals), and Decision ('Keep' if Overall_Score > 6.0, else 'Retake'). No explanations."
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_on_road\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 7.5,\n  \"Angle_and_Composition\": 8.0,\n  \"Clarity_and_Resolution\": 6.5,\n  \"Detail_Visibility\": 7.0,\n  \"Background_and_Distractions\": 8.0,\n  \"Overall_Score\": 7.4,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"audi_blue_car\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 8.5,\n  \"Angle_and_Composition\": 7.8,\n  \"Clarity_and_Resolution\": 9.0,\n  \"Detail_Visibility\": 8.7,\n  \"Background_and_Distractions\": 6.5,\n  \"Overall_Score\": 8.1,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_dark_photo\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 7.8,\n  \"Angle_and_Composition\": 8.2,\n  \"Clarity_and_Resolution\": 7.0,\n  \"Detail_Visibility\": 6.5,\n  \"Background_and_Distractions\": 9.0,\n  \"Overall_Score\": 7.7,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_autumn\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 8.5,\n  \"Angle_and_Composition\": 8.0,\n  \"Clarity_and_Resolution\": 9.0,\n  \"Detail_Visibility\": 8.8,\n  \"Background_and_Distractions\": 7.5,\n  \"Overall_Score\": 8.36,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"blue_car\",\n  \"file_extension\": \".jpg\",\n  \"Lighting_and_Exposure\": 8.5,\n  \"Angle_and_Composition\": 7.8,\n  \"Clarity_and_Resolution\": 8.2,\n  \"Detail_Visibility\": 8.0,\n  \"Background_and_Distractions\": 7.0,\n  \"Overall_Score\": 7.9,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"driving_photo\",\n  \"file_extension\": \".jpg\",\n  \"Lighting_and_Exposure\": 7.8,\n  \"Angle_and_Composition\": 7.0,\n  \"Clarity_and_Resolution\": 8.1,\n  \"Detail_Visibility\": 7.4,\n  \"Background_and_Distractions\": 6.8,\n  \"Overall_Score\": 7.42,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_motion_blur\",\n  \"file_extension\": \".jpg\",\n  \"Lighting_and_Exposure\": 7.5,\n  \"Angle_and_Composition\": 7.0,\n  \"Clarity_and_Resolution\": 5.0,\n  \"Detail_Visibility\": 4.5,\n  \"Background_and_Distractions\": 6.5,\n  \"Overall_Score\": 6.1,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_wash_photo\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 7.5,\n  \"Angle_and_Composition\": 7.0,\n  \"Clarity_and_Resolution\": 6.8,\n  \"Detail_Visibility\": 6.5,\n  \"Background_and_Distractions\": 6.0,\n  \"Overall_Score\": 6.8,\n  \"Decision\": \"Keep\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_meet_west_liquor\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 5.5,\n  \"Angle_and_Composition\": 6.0,\n  \"Clarity_and_Resolution\": 6.0,\n  \"Detail_Visibility\": 5.8,\n  \"Background_and_Distractions\": 6.2,\n  \"Overall_Score\": 5.9,\n  \"Decision\": \"Retake\"\n}\n```"
+    },
+    {
+        "role": "assistant",
+        "content": "```json\n{\n  \"file_name\": \"car_headlight_closeup\",\n  \"file_extension\": \"jpg\",\n  \"Lighting_and_Exposure\": 7.5,\n  \"Angle_and_Composition\": 8.2,\n  \"Clarity_and_Resolution\": 7.8,\n  \"Detail_Visibility\": 8.0,\n  \"Background_and_Distractions\": 7.0,\n  \"Overall_Score\": 7.7,\n  \"Decision\": \"Keep\"\n}\n```"
+    }
+]

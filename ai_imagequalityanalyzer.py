@@ -85,7 +85,7 @@ class OpenAIChatSession():
             "Return a JSON object with: file_name, file_extension, "
             "Lighting_and_Exposure, Angle_and_Composition, Clarity_and_Resolution, "
             "Detail_Visibility, Background_and_Distractions, Overall_Score (all decimals), "
-            "and Decision ('Keep' if Overall_Score > 6.0, else 'Retake'). "
+            "and Decision ('Keep' if Overall_Score > 7.0, else 'Retake'). "
             "No explanations."
         )
 
