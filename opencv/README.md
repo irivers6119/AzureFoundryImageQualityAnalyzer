@@ -83,6 +83,115 @@ python opencv_analysis_session.py
 python opencv_image_quality_analyzer.py
 ```
 
+### API Service Usage
+
+For containerized API service deployments, use HTTP requests to analyze images:
+
+#### Single Image Analysis
+
+**Base64 Image Data:**
+```json
+{
+    "image_data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD...",
+    "profile": "general"
+}
+```
+
+**S3 Object Reference:**
+```json
+{
+    "s3_key": "uploads/image-001.jpg",
+    "profile": "document"
+}
+```
+
+**Image URL:**
+```json
+{
+    "image_url": "https://example.com/image.jpg",
+    "profile": "portrait"
+}
+```
+
+#### Batch Image Analysis
+
+```json
+{
+    "images": [
+        {
+            "s3_key": "uploads/batch-001.jpg",
+            "profile": "general"
+        },
+        {
+            "image_data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD...",
+            "profile": "document"
+        },
+        {
+            "image_url": "https://example.com/photo.jpg",
+            "profile": "portrait"
+        }
+    ],
+    "batch_id": "batch-2025-001"
+}
+```
+
+#### Response Format
+
+**Single Analysis Response:**
+```json
+{
+    "analysis_id": "uuid-12345",
+    "timestamp": "2025-08-20T10:30:00Z",
+    "profile": "general",
+    "filename": "image.jpg",
+    "file_extension": "jpg",
+    "Lighting_and_Exposure": 7.5,
+    "Angle_and_Composition": 8.0,
+    "Clarity_and_Resolution": 6.8,
+    "Detail_Visibility": 7.2,
+    "Background_and_Distractions": 8.5,
+    "Overall_Score": 7.6,
+    "Decision": "Keep",
+    "processing_time": 2.34,
+    "image_dimensions": {
+        "width": 1920,
+        "height": 1080
+    }
+}
+```
+
+**Batch Analysis Response:**
+```json
+{
+    "batch_id": "batch-2025-001",
+    "timestamp": "2025-08-20T10:30:00Z",
+    "total_images": 3,
+    "completed": 3,
+    "failed": 0,
+    "processing_time": 6.82,
+    "analyses": [
+        {
+            "analysis_id": "uuid-12345",
+            "filename": "batch-001.jpg",
+            "Overall_Score": 7.6,
+            "Decision": "Keep"
+        },
+        {
+            "analysis_id": "uuid-12346",
+            "filename": "image.jpg",
+            "Overall_Score": 8.2,
+            "Decision": "Keep"
+        },
+        {
+            "analysis_id": "uuid-12347",
+            "filename": "photo.jpg",
+            "Overall_Score": 5.1,
+            "Decision": "Retake"
+        }
+    ]
+}
+```
+
 ### Comparison with AI Results
 
 ```bash
