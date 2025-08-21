@@ -67,5 +67,3 @@
 | Security              | AWS-managed       | Azure-managed     | Custom | Custom       | Custom    |
 
 ---
-
-Would you like help deploying any of these solutions or comparing performance on your dataset?
