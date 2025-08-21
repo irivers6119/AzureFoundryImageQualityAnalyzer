@@ -90,6 +90,18 @@ print('  Edge Quality:', analyzer.analyze_edge_quality(test_img))
 print('All tests passed!')
 "
         ;;
+    "api")
+        echo "Starting API service..."
+        export API_HOST=${API_HOST:-0.0.0.0}
+        export API_PORT=${API_PORT:-8000}
+        export API_WORKERS=${API_WORKERS:-1}
+        echo "API Configuration:"
+        echo "  Host: $API_HOST"
+        echo "  Port: $API_PORT"
+        echo "  Workers: $API_WORKERS"
+        echo "  Profile: $ANALYSIS_PROFILE"
+        python3 api_service.py
+        ;;
     "bash"|"sh")
         echo "Starting shell..."
         exec /bin/bash

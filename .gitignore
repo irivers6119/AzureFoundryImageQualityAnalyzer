@@ -4,6 +4,10 @@
 .env.development
 .env.test
 .env.production
+*.pem
+*.key
+credentials.json
+aws-credentials.json
 
 # Python cache and compiled files
 __pycache__/
@@ -35,6 +39,7 @@ ENV/
 env.bak/
 venv.bak/
 .venv/
+opencv-layer/
 
 # Jupyter Notebook files
 *.ipynb
@@ -67,6 +72,10 @@ results/
 !requirements.json
 !package.json
 !web-requirements.txt
+!terraform.tfvars.example
+!*.template.json
+analysis_results/
+session_messages/
 
 # Log files
 *.log
@@ -83,12 +92,52 @@ htmlcov/
 .tox/
 .nox/
 
+# Testing and LocalStack
+test-reports/
+test-results.xml
+junit.xml
+coverage.xml
+.coverage.*
+test_output/
+localstack_data/
+localstack_logs/
+.localstack/
+
+# Test environment files
+opencv/test/.env
+opencv/test/test-results.xml
+opencv/test/htmlcov/
+opencv/test/test-reports/
+
 # Docker files (keep the main ones, ignore runtime)
 .docker/
 docker-compose.override.yml
+opencv-layer.zip
+lambda_function.zip
+lambda-deployment/
+
+# LocalStack Docker volumes and data
+localstack-data/
+localstack_volume/
+.localstack/
+docker-compose.localstack.override.yml
+
+# AWS and Infrastructure files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+terraform.tfvars.json
+*.tfplan
+*.zip
+deployment-package/
+aws-deployment/
 
 # Large image files (sample images for testing)
 images/
+test_images/
+sample_images/
 *.jpg
 *.jpeg
 *.png
@@ -97,6 +146,7 @@ images/
 *.gif
 *.webp
 *.ico
+uploads/
 
 # Documentation that's specific to setup
 Helpful_ Links.md
@@ -106,6 +156,14 @@ test_images/
 test_output/
 *_test.py
 test_*.py
+demo_*.py
+comparison_*.py
+
+# LocalStack test data and artifacts
+opencv/test/test_*.json
+opencv/test/sample_*.jpg
+opencv/test/demo_*.py
+opencv/test/mock_*.py
 
 # Database files
 *.db
@@ -132,6 +190,38 @@ backup/
 config.json
 settings.json
 local_settings.py
+aws-config.json
+*.credentials
+
+# Test configuration files (keep templates)
+opencv/test/.env
+!opencv/test/.env.example
+test.env
+test-config.json
+localstack-config.json
+
+# Container and deployment artifacts
+*.tar
+*.tar.gz
+deployment.zip
+function.zip
+
+# Cloud provider specific
+.aws/
+.azure/
+.gcp/
+
+# LocalStack configuration and state
+.localstack/
+localstack.state
+localstack.log
+localstack_*.log
+
+# Monitoring and logging
+monitoring/
+grafana/
+prometheus/
+logs/
 
 # Runtime data
 pid
