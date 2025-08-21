@@ -90,12 +90,34 @@ async def analyze_image(file: UploadFile = File(...), user=Depends(authenticate_
 ## Getting Started
 
 1. Clone the repository.
-2. Place sample images in the `images` directory.
-3. Set up your `.env` file with Azure OpenAI credentials.
+2. **Security Setup:**
+   ```bash
+   # Copy environment template
+   cp .env.example .env
+   
+   # Edit .env with your actual Azure credentials
+   nano .env
+   
+   # Run security validation
+   python3 security_check.py
+   ```
+3. Place sample images in the `images` directory.
 4. Run the main script to analyze images.
+
+## 🔒 Security
+
+**⚠️ IMPORTANT:** This project handles sensitive Azure API credentials. Please review the [SECURITY.md](SECURITY.md) file for detailed security guidelines.
+
+### Quick Security Checklist:
+- [ ] Never commit `.env` files
+- [ ] Use `.env.example` template
+- [ ] Run `python3 security_check.py` before deployment
+- [ ] Rotate API keys regularly
+- [ ] Use Azure Key Vault in production
 
 ## Helpful Links
 
+- [Security Guidelines](SECURITY.md)
 - [Azure OpenAI Service Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - [Azure AI Vision Documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/)
 - [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-studio/)

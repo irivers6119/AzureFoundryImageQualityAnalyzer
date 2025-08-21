@@ -1,0 +1,52 @@
+# Environment variables
+.env
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+azure_ocr_analyzer.log
+
+# Output files
+../output/
+output/
+results/
+*.json
+!requirements.json
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Azure specific
+azure-credentials.json
+.azure/
+
+# Test files
+test_*.py
+*_test.py
+demo_*.py
+
+# Documentation
+docs/_build/
