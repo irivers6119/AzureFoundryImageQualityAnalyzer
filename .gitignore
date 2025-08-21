@@ -1,4 +1,158 @@
+# Environment variables and secrets
 .env
-analyze_images_rest.ipynb
-Helpful_ Links.md
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Jupyter Notebook files
+*.ipynb
+.ipynb_checkpoints
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.spyderproject
+.spyproject
+.ropeproject
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Analysis output files
+output/
+results/
+*.json
+!requirements.json
+!package.json
+!web-requirements.txt
+
+# Log files
+*.log
+logs/
+.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Docker files (keep the main ones, ignore runtime)
+.docker/
+docker-compose.override.yml
+
+# Large image files (sample images for testing)
+images/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.gif
+*.webp
+*.ico
+
+# Documentation that's specific to setup
+Helpful_ Links.md
+
+# Test files
+test_images/
+test_output/
+*_test.py
+test_*.py
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Package managers
+node_modules/
+package-lock.json
+yarn.lock
+
+# Model files and weights
+*.pkl
+*.model
+*.weights
+*.h5
+
+# Backup files
+*.bak
+*.backup
+backup/
+
+# Configuration files with sensitive data
+config.json
+settings.json
+local_settings.py
+
+# Runtime data
+pid
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage reports
+.coverage
+.nyc_output
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk

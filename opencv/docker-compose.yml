@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  opencv-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opencv-image-analyzer
+    volumes:
+      # Mount the images directory from the parent folder
+      - ../images:/app/images:ro
+      # Mount the output directory for results
+      - ../output:/app/output:rw
+      # Optional: Mount a config directory for custom settings
+      - ./config:/app/config:ro
+    environment:
+      - ANALYSIS_PROFILE=general
+      - MAX_WORKERS=4
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    # For interactive mode, uncomment the following lines:
+    # stdin_open: true
+    # tty: true
+    
+  # Optional: Web interface service (if you want to add a web UI later)
+  opencv-analyzer-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: opencv-analyzer-web
+    ports:
+      - "8080:8000"
+    volumes:
+      - ../images:/app/images:ro
+      - ../output:/app/output:rw
+    environment:
+      - ANALYSIS_PROFILE=general
+      - WEB_HOST=0.0.0.0
+      - WEB_PORT=8000
+    depends_on:
+      - opencv-analyzer
+    restart: unless-stopped
+    profiles:
+      - web
+
+# Optional: Networks for service isolation
+networks:
+  opencv-net:
+    driver: bridge
+
+# Optional: Volumes for persistent data
+volumes:
+  output-data:
+    driver: local

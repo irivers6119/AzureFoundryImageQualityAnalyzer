@@ -1,0 +1,55 @@
+# Dockerfile for web interface (optional)
+FROM python:3.11-slim as web-base
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
+    libglib2.0-0 \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libatlas-base-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create working directory
+WORKDIR /app
+
+# Copy requirements and install
+COPY requirements.txt ./
+COPY web-requirements.txt ./
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir -r web-requirements.txt
+
+# Create directories
+RUN mkdir -p /app/images /app/output /app/templates /app/static
+
+# Copy application code
+COPY *.py ./
+COPY web_interface.py ./
+COPY templates/ ./templates/
+COPY static/ ./static/
+
+# Create non-root user
+RUN useradd -m -u 1000 webapp_user && \
+    chown -R webapp_user:webapp_user /app
+USER webapp_user
+
+# Expose web port
+EXPOSE 8000
+
+# Health check for web service
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Run web interface
+CMD ["python3", "web_interface.py"]

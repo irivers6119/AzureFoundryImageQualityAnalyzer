@@ -1,0 +1,57 @@
+# OpenCV-specific .gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Output files (use mounted volumes instead)
+output/
+results/
+*.json
+!requirements.txt
+!web-requirements.txt
+
+# Test files
+test_images/
+test_output/
+
+# Docker runtime files
+.docker/
+docker-compose.override.yml
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Large image files (should be mounted as volumes)
+images/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+
+# Backup files
+*.bak
+*.backup
